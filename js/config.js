@@ -5,6 +5,6 @@
      with no trailing slash, e.g. "https://ceragem-api.onrender.com".
    If the backend cannot be reached, the form falls back to WhatsApp automatically. */
 window.CERAGEM_CONFIG = {
-  API_BASE: "",
+  API_BASE: "https://ceragem-byo-physio.onrender.com",
   LOCAL_API: "http://localhost:3000"
 };
