@@ -59,7 +59,7 @@ app.use(express.json({ limit: "10kb" }));
 app.use(mongoSanitize()); // strips $ and . keys that could inject Mongo operators
 
 /* ---------- API ---------- */
-app.use("/api", rateLimit({ windowMs: 15 * 60 * 1000, max: 100, standardHeaders: true, legacyHeaders: false, message: { error: "Too many requests. Please try again later." } }));
+app.use("/api", rateLimit({ windowMs: 15 * 60 * 1000, max: 100, skip: (req) => req.path === "/health", standardHeaders: true, legacyHeaders: false, message: { error: "Too many requests. Please try again later." } }));
 
 app.get("/api/health", (req, res) => {
   const db = mongoose.connection.readyState === 1;
