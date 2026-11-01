@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Nurse assistant portrait placeholder">
+  <rect width="200" height="200" fill="#C3C6C3"/>
+  <circle cx="100" cy="78" r="36" fill="#F4F7F6"/>
+  <path d="M30 200 q0 -62 70 -62 q70 0 70 62z" fill="#6B8784"/>
+  <path d="M84 138 l16 22 l16 -22" fill="#F4F7F6"/>
+  <path d="M96 120 h8 v10 h10 v8 h-10 v10 h-8 v-10 h-10 v-8 h10z" fill="#F4F7F6" opacity=".0"/>
+</svg>

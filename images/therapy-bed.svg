@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Illustration of the thermal massage bed">
+  <rect width="800" height="450" fill="#E8EEEC"/>
+  <rect y="360" width="800" height="90" fill="#C3C6C3"/>
+  <ellipse cx="400" cy="378" rx="300" ry="14" fill="#2B4242" opacity=".18"/>
+  <!-- frame -->
+  <rect x="90" y="250" width="620" height="96" rx="30" fill="#2B4242"/>
+  <rect x="110" y="232" width="580" height="44" rx="22" fill="#6B8784"/>
+  <rect x="130" y="244" width="540" height="20" rx="10" fill="#93A4AB"/>
+  <!-- spine track + rollers -->
+  <rect x="170" y="238" width="460" height="8" rx="4" fill="#2B4242" opacity=".35"/>
+  <g fill="#F4F7F6" stroke="#2B4242" stroke-width="3"><circle cx="300" cy="241" r="9"/><circle cx="340" cy="241" r="9"/><circle cx="380" cy="241" r="9"/></g>
+  <!-- heat panels -->
+  <g fill="#F0B27A" opacity=".8"><rect x="430" y="248" width="40" height="8" rx="4"/><rect x="480" y="248" width="40" height="8" rx="4"/><rect x="530" y="248" width="40" height="8" rx="4"/><rect x="580" y="248" width="40" height="8" rx="4"/></g>
+  <!-- control -->
+  <rect x="640" y="150" width="70" height="84" rx="14" fill="#2B4242"/>
+  <rect x="650" y="162" width="50" height="26" rx="6" fill="#C3C6C3"/>
+  <circle cx="665" cy="212" r="8" fill="#93A4AB"/><circle cx="689" cy="212" r="8" fill="#6B8784"/>
+  <!-- legs -->
+  <rect x="150" y="346" width="34" height="32" rx="6" fill="#2B4242"/>
+  <rect x="616" y="346" width="34" height="32" rx="6" fill="#2B4242"/>
+  <g fill="none" stroke="#6B8784" stroke-width="3" stroke-linecap="round" opacity=".7">
+    <path d="M300 200 q10 -12 0 -24 q-10 -12 0 -24"/><path d="M380 196 q10 -12 0 -24 q-10 -12 0 -24"/><path d="M460 200 q10 -12 0 -24 q-10 -12 0 -24"/>
+  </g>
+  <text x="400" y="60" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#2B4242">Replace this illustration with a photo of your machine</text>
+</svg>

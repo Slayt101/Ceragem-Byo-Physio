@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" role="img" aria-label="Illustration of a person resting on a thermal therapy bed">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6B8784"/><stop offset="1" stop-color="#2B4242"/></linearGradient>
+    <radialGradient id="warm" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F0B27A" stop-opacity=".75"/><stop offset="1" stop-color="#F0B27A" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="600" height="420" fill="url(#wall)"/>
+  <rect x="0" y="330" width="600" height="90" fill="#2B4242" opacity=".55"/>
+  <circle cx="470" cy="90" r="120" fill="#C3C6C3" opacity=".12"/>
+  <circle cx="470" cy="90" r="70" fill="#C3C6C3" opacity=".12"/>
+  <ellipse cx="300" cy="300" rx="230" ry="60" fill="url(#warm)"/>
+  <!-- bed -->
+  <rect x="70" y="272" width="460" height="46" rx="23" fill="#C3C6C3"/>
+  <rect x="70" y="300" width="460" height="18" rx="9" fill="#93A4AB"/>
+  <rect x="120" y="318" width="26" height="42" rx="6" fill="#7D8F8B"/>
+  <rect x="454" y="318" width="26" height="42" rx="6" fill="#7D8F8B"/>
+  <ellipse cx="300" cy="364" rx="230" ry="12" fill="#000" opacity=".18"/>
+  <!-- roller track -->
+  <g fill="#6B8784"><circle cx="190" cy="292" r="4"/><circle cx="230" cy="292" r="4"/><circle cx="270" cy="292" r="4"/><circle cx="310" cy="292" r="4"/><circle cx="350" cy="292" r="4"/></g>
+  <!-- person -->
+  <circle cx="162" cy="238" r="22" fill="#F4F7F6"/>
+  <path d="M184 252 Q250 226 360 244 Q420 252 470 262 L470 272 L184 272 Z" fill="#F4F7F6"/>
+  <path d="M184 252 Q250 226 360 244 L360 272 L184 272 Z" fill="#E4EAE8"/>
+  <!-- heat waves -->
+  <g fill="none" stroke="#F0B27A" stroke-width="3" stroke-linecap="round" opacity=".85">
+    <path d="M230 214 q10 -14 0 -28 q-10 -14 0 -28"/>
+    <path d="M290 208 q10 -14 0 -28 q-10 -14 0 -28"/>
+    <path d="M350 212 q10 -14 0 -28 q-10 -14 0 -28"/>
+  </g>
+  <!-- plant -->
+  <path d="M540 330 q-4 -50 20 -80" stroke="#C3C6C3" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="548" cy="290" rx="9" ry="20" fill="#93A4AB" transform="rotate(-25 548 290)"/>
+  <ellipse cx="566" cy="262" rx="8" ry="18" fill="#C3C6C3" transform="rotate(20 566 262)"/>
+  <ellipse cx="532" cy="268" rx="7" ry="16" fill="#7D8F8B" transform="rotate(-40 532 268)"/>
+  <path d="M520 330 h50 l-6 28 h-38 z" fill="#F4F7F6"/>
+</svg>
