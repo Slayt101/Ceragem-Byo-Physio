@@ -1,5 +1,8 @@
 /* Email alerts for new bookings and messages.
-   Email is optional: with no SMTP_HOST set, alerts are only written to the log.
+   Two ways to send (the first one that is set up is used):
+     1. Resend (RESEND_API_KEY). Sends over HTTPS, so it works on Render's free plan.
+     2. SMTP (SMTP_HOST). Works locally or on a paid host. Render's free plan blocks SMTP ports.
+   With neither set, alerts are only written to the log.
    Notifications never throw, so a mail problem can never lose a booking. */
 const nodemailer = require("nodemailer");
 
@@ -28,17 +31,44 @@ function whatsappLink(phone) {
   return "https://wa.me/" + digits;
 }
 
+async function sendWithResend(mail) {
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + process.env.RESEND_API_KEY,
+      "Content-Type": "application/json",
+      "User-Agent": "ceragem-physio/1.0",
+    },
+    body: JSON.stringify({
+      from: process.env.EMAIL_FROM || "Ceragem Physio <onboarding@resend.dev>",
+      to: Array.isArray(mail.to) ? mail.to : [mail.to],
+      subject: mail.subject,
+      text: mail.text,
+      html: mail.html,
+      reply_to: mail.replyTo || undefined,
+    }),
+  });
+  const body = await res.text();
+  if (!res.ok) throw new Error(`Resend ${res.status}: ${body.slice(0, 300)}`);
+}
+
 async function send(mail) {
-  const t = getTransporter();
-  if (!t) {
-    console.log("[notify] Email not configured. Skipped:", mail.subject);
-    return false;
-  }
   try {
+    if (process.env.RESEND_API_KEY) {
+      await sendWithResend(mail);
+      console.log("[notify] Email sent via Resend to", mail.to);
+      return true;
+    }
+    const t = getTransporter();
+    if (!t) {
+      console.log("[notify] Email is OFF (no RESEND_API_KEY or SMTP_HOST). Skipped:", mail.subject);
+      return false;
+    }
     await t.sendMail({ from: process.env.SMTP_FROM || process.env.SMTP_USER, ...mail });
+    console.log("[notify] Email sent via SMTP to", mail.to);
     return true;
   } catch (err) {
-    console.error("[notify] Email failed:", err.message);
+    console.error("[notify] Email FAILED:", err.message);
     return false;
   }
 }
